@@ -23,14 +23,6 @@ class DamPhreaticLine extends Plug {
     this.onInitialzeWetline();
     this.onInitialzeSensorsLabel();
   }
-  clearSensors() {
-    const sensorCanvas = document.querySelector('.sensor');
-    sensorCanvas && this.container.removeChild(sensorCanvas);
-    const wetlineCanvas = document.querySelector('.wetline');
-    wetlineCanvas && this.container.removeChild(wetlineCanvas);
-    const commentCanvas = document.querySelector('.comment');
-    commentCanvas && this.container.removeChild(commentCanvas);
-  }
 }
 
 export default DamPhreaticLine;
