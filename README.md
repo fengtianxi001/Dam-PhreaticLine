@@ -4,7 +4,6 @@
 
 > 大坝浸润线横截面展示
 
-## 0. 效果展示
 ![效果图](https://github.com/fengtianxi001/Dam-Phreatic-Line/blob/master/screenshot.png)
 
 ## 1. 项目说明：
