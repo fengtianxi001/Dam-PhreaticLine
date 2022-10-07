@@ -3,7 +3,7 @@ export type DamConfig = {
   damLeftWidth: number;
   damRightWidth: number;
   damTopWidth: number;
-  seaLevel: number;
+  //seaLevel: number;
 };
 
 export type SensorConfig = {

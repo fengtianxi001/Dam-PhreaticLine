@@ -1,4 +1,5 @@
 import DamPhreaticLine from '../package/index';
+// import DamPhreaticLine from '../dist/index.js';
 
 //init Dom
 const app = document.getElementById('app');
@@ -14,9 +15,8 @@ instance.initialize({
   damLeftWidth: 150,
   damRightWidth: 150,
   damTopWidth: 20,
-  seaLevel: 100,
 });
-
+instance.addSeaLevel(100);
 instance.addSensors([
   {
     name: '#1',
@@ -25,12 +25,12 @@ instance.addSensors([
   },
   {
     name: '#2',
-    value: 70,
+    value: 50,
     distance: -20,
   },
   {
     name: '#3',
-    value: 40,
+    value: 30,
     distance: 10,
   },
   {
@@ -40,11 +40,47 @@ instance.addSensors([
   },
   {
     name: '#5',
-    value: 10,
+    value: 0,
     distance: 80,
   },
 ]);
 
 setTimeout(() => {
-  instance.clearSensors();
+  // instance.onUpdateSeaLevel(120);
+  instance.onUpdateSensor({
+    name: '#1',
+    value: 70,
+    distance: -30,
+  });
 }, 1000);
+
+setTimeout(() => {
+  instance.onUpdateSeaLevel(120);
+  instance.onUpdateSensors([
+    {
+      name: '#1',
+      value: 50,
+      distance: -30,
+    },
+    {
+      name: '#2',
+      value: 20,
+      distance: -20,
+    },
+    {
+      name: '#3',
+      value: 10,
+      distance: 10,
+    },
+    {
+      name: '#4',
+      value: 0,
+      distance: 50,
+    },
+    {
+      name: '#5',
+      value: 0,
+      distance: 80,
+    },
+  ]);
+}, 2000);

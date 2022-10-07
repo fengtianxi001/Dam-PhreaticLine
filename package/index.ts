@@ -1,25 +1,27 @@
 import { DamConfig, SensorConfig } from './types';
-// import Canvas from './core/Canvas';
 import Plug from './core/Plug';
-
 class DamPhreaticLine extends Plug {
   container: HTMLElement;
   constructor(container: HTMLElement) {
     super(container);
-    container.style.position = 'relative';
     this.container = container;
   }
   initialize(config: DamConfig) {
-    this.onInitializeBackground();
     this.onInitialzeScale(config);
-    this.onInitialzeDam(config);
-    this.onInitialzeGate(config);
+    this.onInitializeContainer();
+    this.onInitializeBackground();
+    this.onInitialzeDam();
+    this.onInitialzeGate();
+  }
+  addSeaLevel(seaLevel: number) {
+    this.onInitialzeSeaLevel(seaLevel);
+    this.onInitialzeSeaLevelLabel(seaLevel);
   }
   addSensors(config: SensorConfig[]) {
-    this.onInitialzeSensors(config);
-    this.onInitialzeSeaLevel();
-    this.onInitialzeWetline(config);
-    this.onInitialzeComment(config);
+    this.onInitialzeSensorsData(config);
+    this.onInitialzeSensors();
+    this.onInitialzeWetline();
+    this.onInitialzeSensorsLabel();
   }
   clearSensors() {
     const sensorCanvas = document.querySelector('.sensor');
@@ -29,7 +31,6 @@ class DamPhreaticLine extends Plug {
     const commentCanvas = document.querySelector('.comment');
     commentCanvas && this.container.removeChild(commentCanvas);
   }
-  //   updateSensor(config: SensorConfig) {}
 }
 
 export default DamPhreaticLine;
