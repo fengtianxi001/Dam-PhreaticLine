@@ -228,7 +228,7 @@ class Plug {
     this.onInitialzeSensorsLabel();
   }
   //全量更新传感器
-  onUpdateSensors(config: SensorConfig[]) {
+  updateSensors(config: SensorConfig[]) {
     const { sensors, sensorsLabel, wetline } = this.canvasList;
     [sensors, sensorsLabel, wetline].forEach((canvas) => {
       canvas && this.container.removeChild(canvas);
@@ -239,7 +239,7 @@ class Plug {
     this.onInitialzeSensorsLabel();
   }
   //更新单个传感器
-  onUpdateSensor(data: SensorConfig) {
+  updateSensor(data: SensorConfig) {
     const index = this.sensorsData.findIndex(({ name }) => data.name === name);
     if (index < 0) return void 0;
     this.sensorsData[index] = data;

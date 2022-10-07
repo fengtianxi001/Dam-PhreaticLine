@@ -47,7 +47,7 @@ instance.addSensors([
 
 setTimeout(() => {
   // instance.onUpdateSeaLevel(120);
-  instance.onUpdateSensor({
+  instance.updateSensor({
     name: '#1',
     value: 70,
     distance: -30,
@@ -56,7 +56,7 @@ setTimeout(() => {
 
 setTimeout(() => {
   instance.onUpdateSeaLevel(120);
-  instance.onUpdateSensors([
+  instance.updateSensors([
     {
       name: '#1',
       value: 50,
