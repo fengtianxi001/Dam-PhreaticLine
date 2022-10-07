@@ -4,6 +4,9 @@
 
 > 大坝浸润线横截面展示
 
+## 0. 效果展示
+![效果图](https://github.com/fengtianxi001/Dam-Phreatic-Line/blob/master/screenshot.png)
+
 ## 1. 项目说明：
 
 - 传入`大坝高度`、`大坝迎水面宽度`、`大坝背水面宽度`、`大坝坝顶宽度` 等四个参数来绘制大坝形状
